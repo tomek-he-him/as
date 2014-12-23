@@ -1,0 +1,31 @@
+{ "name": "map-to"
+, "version": "0.0.0"
+, "description": "map-to/array and map-to/object. Convert easily."
+, "license": "MIT"
+, "keywords":
+  [ "object"
+  , "array"
+  , "convert"
+  , "functional"
+  , "programming"
+  , "functions"
+  , "map"
+  , "forEach"
+  , "filter"
+  , "every"
+  , "some"
+  , "sort"
+  , "pop"
+  ]
+
+, "contributors":
+  [ { "name": "Tomek Wiszniewski"
+    , "email": "t.wiszniewski@gmail.com"
+    }
+  ]
+
+, "repository":
+  { "type": "git"
+  , "url": "https://github.com/tomekwi/map-to.js.git"
+  }
+}
