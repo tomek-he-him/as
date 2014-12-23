@@ -18,6 +18,7 @@
   , "pop"
   ]
 
+, "author": "Tomek Wiszniewski <t.wiszniewski@gmail.com>"
 , "contributors":
   [ { "name": "Tomek Wiszniewski"
     , "email": "t.wiszniewski@gmail.com"
