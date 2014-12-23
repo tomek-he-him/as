@@ -1,5 +1,7 @@
 map-to
 ======
+[![Build Status](https://travis-ci.org/tomekwi/map-to.js.svg?branch=master)](https://travis-ci.org/tomekwi/map-to.js)
+
 
 **`map-to/array` and `map-to/object`. Convert easily, back and forth.**
 
