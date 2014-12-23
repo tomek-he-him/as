@@ -3,7 +3,12 @@ map-to
 
 **`map-to/array` and `map-to/object`. Convert easily, back and forth.**
 
-**Arrays' functional goodness brought to objects. Objects' flexibility brought to arrays.**
+- Brings all **functional goodness of arrays** to objects.
+- Brings the **flexibility of objects** to arrays.
+- Works well with any functional programming library, like [101][].
+
+
+[101]: https://github.com/tjmehta/101
 
 
 
