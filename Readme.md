@@ -1,7 +1,7 @@
 map-to
 ======
 
-**`map-to/array` and `map-to/object`. Convert easily.**
+**`map-to/array` and `map-to/object`. Convert easily, back and forth.**
 
 **Arrays' functional goodness brought to objects. Objects' flexibility brought to arrays.**
 
