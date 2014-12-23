@@ -28,4 +28,8 @@
   { "type": "git"
   , "url": "https://github.com/tomekwi/map-to.js.git"
   }
+
+, "devDependencies":
+  { "tape": "3.0.3"
+  }
 }
