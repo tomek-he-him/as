@@ -29,7 +29,11 @@
   , "url": "https://github.com/tomekwi/map-to.js.git"
   }
 
+, "scripts":
+  { "test": "node test | tap-dot"
+  }
 , "devDependencies":
   { "tape": "3.0.3"
+  , "tap-dot": "0.2.3"
   }
 }
