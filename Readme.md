@@ -1,6 +1,4 @@
-map-to
-======
-[![Build Status](https://travis-ci.org/tomekwi/map-to.js.svg?branch=master)](https://travis-ci.org/tomekwi/map-to.js)
+# map-to [![Build status](https://img.shields.io/travis/tomekwi/map-to.js.svg?style=flat-square)](https://travis-ci.org/tomekwi/map-to.js) [![Code climate](https://img.shields.io/codeclimate/github/tomekwi/map-to.js.svg?style=flat-square)](https://codeclimate.com/github/tomekwi/map-to.js)
 
 
 **`map-to/array` and `map-to/object`. Convert easily, back and forth.**
