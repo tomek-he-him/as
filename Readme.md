@@ -1,7 +1,10 @@
-# map-to [![Build status](https://img.shields.io/travis/tomekwi/map-to.js.svg?style=flat-square)](https://travis-ci.org/tomekwi/map-to.js) [![Code climate](https://img.shields.io/codeclimate/github/tomekwi/map-to.js.svg?style=flat-square)](https://codeclimate.com/github/tomekwi/map-to.js)
-
+map-to
+======
 
 **`map-to/array` and `map-to/object`. Convert easily, back and forth.**
+
+[![Build status](https://img.shields.io/travis/tomekwi/map-to.js.svg?style=flat-square)](https://travis-ci.org/tomekwi/map-to.js) 
+[![Code climate](https://img.shields.io/codeclimate/github/tomekwi/map-to.js.svg?style=flat-square)](https://codeclimate.com/github/tomekwi/map-to.js)
 
 - Brings all **functional goodness of arrays** to objects.
 - Brings the **flexibility of objects** to arrays.
