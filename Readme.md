@@ -11,7 +11,7 @@ map-to
 - Works well with a functional programming library, like [101][].
 
 
-[101]: https://github.com/tjmehta/101
+[101]: https://github.com/tjmehta/101 "tjmehta/101"
 
 
 
