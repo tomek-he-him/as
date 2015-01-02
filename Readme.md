@@ -8,7 +8,7 @@ map-to
 
 - Brings all **functional goodness of arrays** to objects.
 - Brings the **flexibility of objects** to arrays.
-- Works well with any functional programming library, like [101][].
+- Works well with any **functional programming** library, like [101][].
 
 
 [101]: https://github.com/tjmehta/101
