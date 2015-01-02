@@ -12,6 +12,7 @@ module.exports = function mapToObject (array) {
 
   i = 0; l = array.length; while (i < l) {
     pair = array[i++];
+    if (!pair || !pair.hasOwnProperty('key')) continue;
     result[pair.key] = pair.value;
     }
 
