@@ -1,5 +1,5 @@
 { "name": "map-to"
-, "version": "0.0.2"
+, "version": "0.0.3"
 , "description": "map-to/array and map-to/object. Convert easily, back and forth."
 , "license": "MIT"
 , "keywords":
