@@ -5,7 +5,10 @@
 \#*
 
 # - Automatically installed dependencies,
-node_modules/
+/node_modules/
+
+# - Test coverage reports,
+/coverage/
 
 # - Editor files.
 *.sublime-project
