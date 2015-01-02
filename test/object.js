@@ -18,9 +18,21 @@ test('map-to/object', function (tape) {
   , [ mapToObject(
       [ {key: 'a', value: 'b'}
       , {key: 'c', value: 'd'}
-      , {key: 'e', value: {f: 'g'}}
+      , {key: 'e', value: {key: 'f', value: 'g'}}
       ])
-    , {a: 'b', c: 'd', e: {f: 'g'}}
+    , {a: 'b', c: 'd', e: {key: 'f', value: 'g'}}
+    ]
+
+  , [ mapToObject(
+      [ {key: 'a', value: 'b'}
+      , null
+      , {key: 'c', value: 'd'}
+      , undefined
+      , {}
+      , "a string"
+      , true
+      ])
+    , {a: 'b', c: 'd'}
     ]
 
   ].map(deepEqual);
