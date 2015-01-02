@@ -1,2 +1,7 @@
 language: node_js
 node_js: ["0.10"]
+
+addons:
+  code_climate:
+    repo_token: 0d34674c0292054c646ec320cca556d10cae46e1e0f2f150323f483e6558f9a5
+after_script: ./node_modules/istanbul/lib/cli.js cover test && codeclimate < ./coverage/lcov.info
