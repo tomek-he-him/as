@@ -7,13 +7,13 @@
  * @returns {Array} – A new object mapped from the array.
  */
 module.exports = function mapToObject (array) {
-    var i, l, pair;
-    var result = {};
+  var i, l, pair;
+  var result = {};
 
-    i = 0; l = array.length; while (i < l) {
-        pair = array[i++];
-        result[pair.key] = pair.value;
-        }
+  i = 0; l = array.length; while (i < l) {
+    pair = array[i++];
+    result[pair.key] = pair.value;
+    }
 
-    return result;
-    };
+  return result;
+  };

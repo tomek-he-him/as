@@ -2,6 +2,6 @@
 //     var mapToArray = require('map-to/array');
 
 module.exports =
-    { array: require('./array')
-    , object: require('./object')
-    };
+  { array: require('./array')
+  , object: require('./object')
+  };
