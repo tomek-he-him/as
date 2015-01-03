@@ -1,6 +1,6 @@
 { "name": "as"
 , "version": "0.0.0-new"
-, "description": "map-to/array and map-to/object. Convert easily, back and forth."
+, "description": "as/array and as/object. Convert easily, back and forth."
 , "license": "MIT"
 , "keywords":
   [ "object"
@@ -27,7 +27,7 @@
 
 , "repository":
   { "type": "git"
-  , "url": "https://github.com/tomekwi/map-to.js.git"
+  , "url": "https://github.com/tomekwi/as.js.git"
   }
 
 , "scripts":

@@ -1,10 +1,10 @@
-map-to
-======
+as
+===
 
-**`map-to/array` and `map-to/object`. Convert easily, back and forth.**
+**`as/array` and `as/object`. Convert easily, back and forth.**
 
-[![Build status](https://img.shields.io/travis/tomekwi/map-to.js.svg?style=flat-square)](https://travis-ci.org/tomekwi/map-to.js) 
-[![Code climate](https://img.shields.io/codeclimate/github/tomekwi/map-to.js.svg?style=flat-square)](https://codeclimate.com/github/tomekwi/map-to.js)
+[![Build status](https://img.shields.io/travis/tomekwi/as.js.svg?style=flat-square)](https://travis-ci.org/tomekwi/as.js) 
+[![Code climate](https://img.shields.io/codeclimate/github/tomekwi/as.js.svg?style=flat-square)](https://codeclimate.com/github/tomekwi/as.js)
 
 - Brings all functional goodness of arrays to objects.
 - Brings the flexibility of objects to arrays.
@@ -20,7 +20,7 @@ Installation
 ------------
 
 ```sh
-> npm install map-to
+> npm install as
 ```
 
 
@@ -30,8 +30,8 @@ Usage
 -----
 
 ```js
-var mapToObject = require("map-to/object");
-var mapToArray = require("map-to/array");
+var asObject = require("as/object");
+var asArray = require("as/array");
 
 // Examples will soon flood in here
 ```
