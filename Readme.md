@@ -33,7 +33,7 @@ Usage
 var mapToObject = require("map-to/object");
 var mapToArray = require("map-to/array");
 
-// Examples coming soon
+// Examples will soon flood in here
 ```
 
 
