@@ -4,8 +4,8 @@ as
 **`as/array` and `as/object`. Convert easily, back and forth.**
 
 [![Build status](https://img.shields.io/travis/tomekwi/as.js.svg?style=flat-square)](https://travis-ci.org/tomekwi/as.js) 
-[![Code climate](https://img.shields.io/codeclimate/github/tomekwi/as.js.svg?style=flat-square)](https://codeclimate.com/github/tomekwi/as.js) 
-[![Coveralls](https://img.shields.io/coveralls/tomekwi/as.js.svg?style=flat-square)](https://coveralls.io/r/tomekwi/as.js)
+[![Coveralls](https://img.shields.io/coveralls/tomekwi/as.js.svg?style=flat-square)](https://coveralls.io/r/tomekwi/as.js) 
+[![Code climate](https://img.shields.io/codeclimate/github/tomekwi/as.js.svg?style=flat-square)](https://codeclimate.com/github/tomekwi/as.js)
 
 - Brings all functional goodness of arrays to objects.
 - Brings the flexibility of objects to arrays.
