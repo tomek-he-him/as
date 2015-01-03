@@ -32,9 +32,12 @@
 
 , "scripts":
   { "test": "node test | faucet"
+  , "coveralls": "istanbul cover test --report lcovonly && coveralls < ./coverage/lcov.info"
   }
 , "devDependencies":
   { "tape": "3.0.3"
   , "faucet": "0.0.1"
+  , "coveralls": "2.11.2"
+  , "istanbul": "0.3.5"
   }
 }
