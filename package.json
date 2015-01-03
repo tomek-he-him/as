@@ -1,5 +1,5 @@
 { "name": "as"
-, "version": "0.0.0-new"
+, "version": "0.0.4"
 , "description": "as/array and as/object. Convert easily, back and forth."
 , "license": "MIT"
 , "keywords":
