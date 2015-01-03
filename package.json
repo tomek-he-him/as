@@ -1,5 +1,5 @@
-{ "name": "map-to"
-, "version": "0.0.3"
+{ "name": "as"
+, "version": "0.0.0-new"
 , "description": "map-to/array and map-to/object. Convert easily, back and forth."
 , "license": "MIT"
 , "keywords":
@@ -36,6 +36,5 @@
 , "devDependencies":
   { "tape": "3.0.3"
   , "faucet": "0.0.1"
-  , "istanbul": "0.3.5"
   }
 }
