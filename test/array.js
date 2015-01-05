@@ -21,7 +21,36 @@ test('map-to/array', function (tape) {
       , {key: 'c', value: 'd'}
       , {key: 'e', value: {f: 'g'}}
       ]
-    , "should map only one level deep by default"
+    , "should map shallowly by default"
+    ]
+
+  , [ asArray({a: 'b', c: 'd', e: {f: 'g'}}, {depth: 1})
+    , [ {key: 'a', value: 'b'}
+      , {key: 'c', value: 'd'}
+      , {key: 'e', value: [ {key: 'f', value: 'g'}
+                          ]}
+      ]
+    , "should map one level deep"
+    ]
+
+  , [ asArray({a: 'b', c: 'd', e: {f: 'g', h: {i: 'j'}}}, {depth: 1})
+    , [ {key: 'a', value: 'b'}
+      , {key: 'c', value: 'd'}
+      , {key: 'e', value: [ {key: 'f', value: 'g'}
+                          , {key: 'i', value: {i: 'j'}}
+                          ]}
+      ]
+    , "should map only one level deep"
+    ]
+
+  , [ asArray({a: 'b', c: 'd', e: {f: 'g', h: {i: 'j'}}}, {depth: 1})
+    , [ {key: 'a', value: 'b'}
+      , {key: 'c', value: 'd'}
+      , {key: 'e', value: [ {key: 'f', value: 'g'}
+                          , {key: 'i', value: [{key: 'i', value: 'j'}]}
+                          ]}
+      ]
+    , "should map deeply"
     ]
 
   ].map(deepEqual);

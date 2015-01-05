@@ -19,15 +19,6 @@ test('map-to/object', function (tape) {
 
   , [ asObject(
       [ {key: 'a', value: 'b'}
-      , {key: 'c', value: 'd'}
-      , {key: 'e', value: [{key: 'f', value: 'g'}]}
-      ])
-    , {a: 'b', c: 'd', e: [{key: 'f', value: 'g'}]}
-    , "should map only one level deep by default"
-    ]
-
-  , [ asObject(
-      [ {key: 'a', value: 'b'}
       , null
       , {key: 'c', value: 'd'}
       , undefined
@@ -40,6 +31,52 @@ test('map-to/object', function (tape) {
       ])
     , {a: 'b', c: 'd'}
     , "should ignore values which don't match the `{key, value}` structure"
+    ]
+
+  , [ asObject(
+      [ {key: 'a', value: 'b'}
+      , {key: 'c', value: 'd'}
+      , {key: 'e', value: [{key: 'f', value: 'g'}]}
+      ])
+    , {a: 'b', c: 'd', e: [{key: 'f', value: 'g'}]}
+    , "should map shallowly by default"
+    ]
+
+  , [ asObject
+      ( [ {key: 'a', value: 'b'}
+        , {key: 'c', value: 'd'}
+        , {key: 'e', value: [{key: 'f', value: 'g'}]}
+        ]
+      , {depth: 1}
+      )
+    , {a: 'b', c: 'd', e: {f: 'g'}}
+    , "should map one level deep"
+    ]
+
+  , [ asObject
+      ( [ {key: 'a', value: 'b'}
+        , {key: 'c', value: 'd'}
+        , {key: 'e', value: [ {key: 'f', value: 'g'}
+                            , {key: 'h', value: [{key: 'i', value: 'j'}]}
+                            ]}
+        ]
+      , {depth: 1}
+      )
+    , {a: 'b', c: 'd', e: {f: 'g', h: [{key: 'i', value: 'j'}]}}
+    , "should map only one level deep"
+    ]
+
+  , [ asObject
+      ( [ {key: 'a', value: 'b'}
+        , {key: 'c', value: 'd'}
+        , {key: 'e', value: [ {key: 'f', value: 'g'}
+                            , {key: 'h', value: [{key: 'i', value: 'j'}]}
+                            ]}
+        ]
+      , {depth: Infinity}
+      )
+    , {a: 'b', c: 'd', e: {f: 'g', h: {i: 'j'}}}
+    , "should map deeply"
     ]
 
   ].map(deepEqual);
