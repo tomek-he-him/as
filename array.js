@@ -14,19 +14,28 @@
  *    The depth to which the `object`'s tree should be mapped. Set it to `Infinity` to map the
  *    entire tree structure.
  *
- * - {Boolean} [keepArrays=true]
- *    If set to `false`, arrays will be traversed like pure objects. `[true]` will be mapped to
+ * - {Boolean} [traverseArrays=false]
+ *    If set to `true`, arrays will be traversed like pure objects. `[true]` will be mapped to
  *    `[{key: "0", value: true}, {key: "length", value: 1}]`.
  *
  * @returns {Array}
  *    A new array of key-value pairs mapped from the object.
  */
-module.exports = function asArray (object) {
-  var key;
-  var result = [];
+module.exports = function asArray (object, options, _depthLeft) {
+  var key, value;
 
+  if (!options) options = {};
+  if (_depthLeft === void null && options.depth) _depthLeft = options.depth;
+
+  var result = [];
   for (key in object) if (object.hasOwnProperty(key)) {
-    result.push({key: key, value: object[key]});
+    value = object[key];
+    if (  _depthLeft
+       && value !== null && typeof value == "object"
+       ) {
+      value = asArray(value, options, _depthLeft - 1);
+      }
+    result.push({key: key, value: value});
     }
 
   return result;

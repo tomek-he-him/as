@@ -17,14 +17,22 @@
  * @returns {Object}
  *    A new object mapped from the array.
  */
-module.exports = function asObject (array) {
-  var i, l, pair;
-  var result = {};
+module.exports = function asObject (array, options, _depthLeft) {
+  var pair, value;
 
-  i = 0; l = array.length; while (i < l) {
+  if (!options) options = {};
+  if (_depthLeft === void null && options.depth) _depthLeft = options.depth;
+
+  var result = {};
+  var i = 0; var l = array.length; while (i < l) {
     pair = array[i++];
     if (!pair || !pair.hasOwnProperty("key")) continue;
-    result[pair.key] = pair.value;
+
+    value = pair.value;
+    if (_depthLeft && value instanceof Array) {
+      value = asObject(value, options, _depthLeft - 1);
+      }
+    result[pair.key] = value;
     }
 
   return result;
