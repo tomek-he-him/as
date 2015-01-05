@@ -1,9 +1,17 @@
 //
-// map-to/object
+// as/object
 // -------------------------------------------------------------------------------------------------
-// Maps an array of `{key: a, value: b}` pairs to a `{a: b}` object.
+// Maps an array of `{key: a, value: b}` pairs to a new `{a: b}` object.
+//
 /**
- * @param {Object} object – The array of key-value pairs to be mapped.
+ * @param {Array} array
+ *    The array of key-value pairs to be mapped.
+ *
+ * @param {Object} [options]
+ *  - {Number} [depth=0]
+ *      The depth to which the `array`'s pairs should be traversed. Set it to `Infinity` to map the
+ *      whole structure.
+ *
  * @returns {Array} – A new object mapped from the array.
  */
 module.exports = function asObject (array) {
