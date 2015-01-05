@@ -11,11 +11,11 @@
  *
  * @param {Object} [options]
  * - {Number} [depth=0]
- *    The depth to which the `object` tree should be mapped. Set it to `Infinity` to map the whole
- *    object's structure.
+ *    The depth to which the `object`'s tree should be mapped. Set it to `Infinity` to map the
+ *    entire tree structure.
  *
  * - {Boolean} [keepArrays=true]
- *    If set to false, arrays will be traversed like pure objects. `[true]` will be mapped to
+ *    If set to `false`, arrays will be traversed like pure objects. `[true]` will be mapped to
  *    `[{key: "0", value: true}, {key: "length", value: 1}]`.
  *
  * @returns {Array}
