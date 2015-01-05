@@ -43,7 +43,7 @@ test("map-to/array", function (tape) {
     , "should map only one level deep"
     ]
 
-  , [ asArray({a: "b", c: "d", e: {f: "g", h: {i: "j"}}}, {depth: 1})
+  , [ asArray({a: "b", c: "d", e: {f: "g", h: {i: "j"}}}, {depth: Infinity})
     , [ {key: "a", value: "b"}
       , {key: "c", value: "d"}
       , {key: "e", value: [ {key: "f", value: "g"}
