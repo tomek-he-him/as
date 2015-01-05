@@ -16,7 +16,7 @@
  *
  * - {Boolean} [traverseArrays=false]
  *    If set to `true`, arrays will be traversed like pure objects. `[true]` will be mapped to
- *    `[{key: "0", value: true}, {key: "length", value: 1}]`.
+ *    `[{key: "0", value: true}]`.
  *
  * @returns {Array}
  *    A new array of key-value pairs mapped from the object.
