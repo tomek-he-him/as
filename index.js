@@ -1,10 +1,10 @@
 //
 // Consider importing individual functions:
 //
-//     var asArray = require('as/array');
+//     var asArray = require("as/array");
 //
 
 module.exports =
-  { array: require('./array')
-  , object: require('./object')
+  { array: require("./array")
+  , object: require("./object")
   };

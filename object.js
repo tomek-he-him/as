@@ -23,7 +23,7 @@ module.exports = function asObject (array) {
 
   i = 0; l = array.length; while (i < l) {
     pair = array[i++];
-    if (!pair || !pair.hasOwnProperty('key')) continue;
+    if (!pair || !pair.hasOwnProperty("key")) continue;
     result[pair.key] = pair.value;
     }
 

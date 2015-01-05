@@ -1,14 +1,14 @@
-var test = require('tape');
-var asObject = require('../object');
+var test = require("tape");
+var asObject = require("../object");
 
-test('map-to/object', function (tape) {
+test("map-to/object", function (tape) {
   var deepEqual = Function.prototype.apply.bind(tape.deepEqual, null);
 
   [ [ asObject(
-      [ {key: 'a', value: 'b'}
-      , {key: 'c', value: 'd'}
+      [ {key: "a", value: "b"}
+      , {key: "c", value: "d"}
       ])
-    , {a: 'b', c: 'd'}
+    , {a: "b", c: "d"}
     , "should do the job for a simple array"
     ]
 
@@ -18,64 +18,64 @@ test('map-to/object', function (tape) {
     ]
 
   , [ asObject(
-      [ {key: 'a', value: 'b'}
+      [ {key: "a", value: "b"}
       , null
-      , {key: 'c', value: 'd'}
+      , {key: "c", value: "d"}
       , undefined
       , {}
       , "a string"
       , true
-      , {another: 'structure', value: 'anything'}
+      , {another: "structure", value: "anything"}
       , NaN
       , 10
       ])
-    , {a: 'b', c: 'd'}
+    , {a: "b", c: "d"}
     , "should ignore values which don't match the `{key, value}` structure"
     ]
 
   , [ asObject(
-      [ {key: 'a', value: 'b'}
-      , {key: 'c', value: 'd'}
-      , {key: 'e', value: [{key: 'f', value: 'g'}]}
+      [ {key: "a", value: "b"}
+      , {key: "c", value: "d"}
+      , {key: "e", value: [{key: "f", value: "g"}]}
       ])
-    , {a: 'b', c: 'd', e: [{key: 'f', value: 'g'}]}
+    , {a: "b", c: "d", e: [{key: "f", value: "g"}]}
     , "should map shallowly by default"
     ]
 
   , [ asObject
-      ( [ {key: 'a', value: 'b'}
-        , {key: 'c', value: 'd'}
-        , {key: 'e', value: [{key: 'f', value: 'g'}]}
+      ( [ {key: "a", value: "b"}
+        , {key: "c", value: "d"}
+        , {key: "e", value: [{key: "f", value: "g"}]}
         ]
       , {depth: 1}
       )
-    , {a: 'b', c: 'd', e: {f: 'g'}}
+    , {a: "b", c: "d", e: {f: "g"}}
     , "should map one level deep"
     ]
 
   , [ asObject
-      ( [ {key: 'a', value: 'b'}
-        , {key: 'c', value: 'd'}
-        , {key: 'e', value: [ {key: 'f', value: 'g'}
-                            , {key: 'h', value: [{key: 'i', value: 'j'}]}
+      ( [ {key: "a", value: "b"}
+        , {key: "c", value: "d"}
+        , {key: "e", value: [ {key: "f", value: "g"}
+                            , {key: "h", value: [{key: "i", value: "j"}]}
                             ]}
         ]
       , {depth: 1}
       )
-    , {a: 'b', c: 'd', e: {f: 'g', h: [{key: 'i', value: 'j'}]}}
+    , {a: "b", c: "d", e: {f: "g", h: [{key: "i", value: "j"}]}}
     , "should map only one level deep"
     ]
 
   , [ asObject
-      ( [ {key: 'a', value: 'b'}
-        , {key: 'c', value: 'd'}
-        , {key: 'e', value: [ {key: 'f', value: 'g'}
-                            , {key: 'h', value: [{key: 'i', value: 'j'}]}
+      ( [ {key: "a", value: "b"}
+        , {key: "c", value: "d"}
+        , {key: "e", value: [ {key: "f", value: "g"}
+                            , {key: "h", value: [{key: "i", value: "j"}]}
                             ]}
         ]
       , {depth: Infinity}
       )
-    , {a: 'b', c: 'd', e: {f: 'g', h: {i: 'j'}}}
+    , {a: "b", c: "d", e: {f: "g", h: {i: "j"}}}
     , "should map deeply"
     ]
 

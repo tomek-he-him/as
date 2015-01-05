@@ -1,2 +1,2 @@
-require('./array');
-require('./object');
+require("./array");
+require("./object");
