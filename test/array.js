@@ -89,33 +89,52 @@ test("map-to/array", function (tape) {
 
   , [ asArray(["f", "g"])
     , ["f", "g"]
-    , "should keep arrays intact by default"
+    , "should keep arrays intact"
+    ]
+
+  , [ asArray(["f", ["g"]], {depth: Infinity})
+    , ["f", ["g"]]
+    , "should keep multi-dimentional arrays intact"
     ]
 
   , [ asArray(["f", "g"], {traverseArrays: true})
-    , [ {key: "0", value: "f"}
-      , {key: "1", value: "g"}
-      ]
+    , ["f", "g"]
+    , "should keep arrays intact when traversing"
+    ]
+
+  , [ asArray(["f", ["g"]], {depth: Infinity, traverseArrays: true})
+    , ["f", ["g"]]
+    , "should keep multi-dimentional arrays intact when traversing"
+    ]
+
+  , [ asArray(["f", {g: "h"}], {depth: Infinity, traverseArrays: true})
+    , ["f", [{key: "g", value: "h"}]]
     , "should traverse arrays when told to"
     ]
 
-  , [ asArray({a: "b", c: "d", e: ["f", "g"]}, {depth: Infinity})
-    , [ {key: "a", value: "b"}
-      , {key: "c", value: "d"}
-      , {key: "e", value: ["f", "g"]}
-      ]
-    , "should keep nested arrays intact by default"
+  , [ asArray(["f", {g: ["h"]}], {depth: Infinity, traverseArrays: true})
+    , ["f", {key: "g", value: ["h"]}]
+    , "should keep nested arrays intact when traversing"
     ]
 
-  , [ asArray({a: "b", c: "d", e: ["f", "g", ["h"]]}, {traverseArrays: true, depth: Infinity})
-    , [ {key: "a", value: "b"}
-      , {key: "c", value: "d"}
-      , {key: "e", value: [ {key: "0", value: "f"}
-                          , {key: "1", value: "g"}
-                          , {key: "2", value: [{key: "0", value: "h"}]}
-                          ]}
-      ]
+  , [ asArray
+      ( ["f", {g: [ "h"
+                  , {i: "j"}
+                  ]}]
+      , {depth: Infinity, traverseArrays: true}
+      )
+    , ["f", {key: "g", value: [ "h"
+                              , [{key: "i", value: "j"}]
+                              ]}]
     , "should traverse nested arrays when told to"
+    ]
+
+  , [ asArray
+      ( ["f", {g: ["h", {i: "j"}]}]
+      , {depth: 2, traverseArrays: true}
+      )
+    , ["f", {key: "g", value: ["h", {i: "j"}]}]
+    , "should traverse arrays up to the specified depth"
     ]
 
   ].map(deepEqual);
