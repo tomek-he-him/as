@@ -83,60 +83,6 @@ test("as/array", function (tape) {
     , "should map deeply"
     ]
 
-
-  // `options.traverseArrays`
-  // -----------------------------------------------------------------------------------------------
-
-  , [ asArray(["f", "g"])
-    , ["f", "g"]
-    , "should keep arrays intact"
-    ]
-
-  , [ asArray(["f", ["g"]], {depth: Infinity})
-    , ["f", ["g"]]
-    , "should keep multi-dimentional arrays intact"
-    ]
-
-  , [ asArray(["f", "g"], {traverseArrays: true})
-    , ["f", "g"]
-    , "should keep arrays intact when traversing"
-    ]
-
-  , [ asArray(["f", ["g"]], {depth: Infinity, traverseArrays: true})
-    , ["f", ["g"]]
-    , "should keep multi-dimentional arrays intact when traversing"
-    ]
-
-  , [ asArray(["f", {g: "h"}], {depth: Infinity, traverseArrays: true})
-    , ["f", [{key: "g", value: "h"}]]
-    , "should traverse arrays when told to"
-    ]
-
-  , [ asArray(["f", {g: ["h"]}], {depth: Infinity, traverseArrays: true})
-    , ["f", {key: "g", value: ["h"]}]
-    , "should keep nested arrays intact when traversing"
-    ]
-
-  , [ asArray
-      ( ["f", {g: [ "h"
-                  , {i: "j"}
-                  ]}]
-      , {depth: Infinity, traverseArrays: true}
-      )
-    , ["f", {key: "g", value: [ "h"
-                              , [{key: "i", value: "j"}]
-                              ]}]
-    , "should traverse nested arrays when told to"
-    ]
-
-  , [ asArray
-      ( ["f", {g: ["h", {i: "j"}]}]
-      , {depth: 2, traverseArrays: true}
-      )
-    , ["f", {key: "g", value: ["h", {i: "j"}]}]
-    , "should traverse arrays up to the specified depth"
-    ]
-
   ].map(deepEqual);
 
   tape.end();
