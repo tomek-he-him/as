@@ -25,7 +25,10 @@ module.exports = function asArray (object, options, _depthLeft) {
   var key, value;
 
   if (!options) options = {};
+  var traverseArrays = options.traverseArrays || false;
   if (_depthLeft === void null && options.depth) _depthLeft = options.depth;
+
+  if (!traverseArrays && object instanceof Array) return object.slice();
 
   var result = [];
   for (key in object) if (object.hasOwnProperty(key)) {
