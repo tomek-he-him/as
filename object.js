@@ -6,7 +6,7 @@
  * @param {Object} object – The array of key-value pairs to be mapped.
  * @returns {Array} – A new object mapped from the array.
  */
-module.exports = function mapToObject (array) {
+module.exports = function asObject (array) {
   var i, l, pair;
   var result = {};
 

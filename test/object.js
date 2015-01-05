@@ -1,21 +1,21 @@
 var test = require('tape');
-var mapToObject = require('../object');
+var asObject = require('../object');
 
 test('map-to/object', function (tape) {
   var deepEqual = Function.prototype.apply.bind(tape.deepEqual, null);
 
-  [ [ mapToObject([])
+  [ [ asObject([])
     , {}
     ]
 
-  , [ mapToObject(
+  , [ asObject(
       [ {key: 'a', value: 'b'}
       , {key: 'c', value: 'd'}
       ])
     , {a: 'b', c: 'd'}
     ]
 
-  , [ mapToObject(
+  , [ asObject(
       [ {key: 'a', value: 'b'}
       , {key: 'c', value: 'd'}
       , {key: 'e', value: {key: 'f', value: 'g'}}
@@ -23,7 +23,7 @@ test('map-to/object', function (tape) {
     , {a: 'b', c: 'd', e: {key: 'f', value: 'g'}}
     ]
 
-  , [ mapToObject(
+  , [ asObject(
       [ {key: 'a', value: 'b'}
       , null
       , {key: 'c', value: 'd'}
