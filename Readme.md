@@ -1,6 +1,7 @@
-[![Build status](https://img.shields.io/travis/tomekwi/as.js.svg?style=flat-square)](https://travis-ci.org/tomekwi/as.js) 
-[![Coveralls](https://img.shields.io/coveralls/tomekwi/as.js.svg?style=flat-square)](https://coveralls.io/r/tomekwi/as.js) 
-[![Code climate](https://img.shields.io/codeclimate/github/tomekwi/as.js.svg?style=flat-square)](https://codeclimate.com/github/tomekwi/as.js)
+ [![Build status](https://img.shields.io/travis/tomekwi/as.js.svg?style=flat-square)](https://travis-ci.org/tomekwi/as.js)
+ [![Coveralls](https://img.shields.io/coveralls/tomekwi/as.js.svg?style=flat-square)](https://coveralls.io/r/tomekwi/as.js)
+ [![Code climate](https://img.shields.io/codeclimate/github/tomekwi/as.js.svg?style=flat-square)](https://codeclimate.com/github/tomekwi/as.js)
+ [![David DM](https://img.shields.io/david/tomekwi/as.js.svg?style=flat-square)](http://david-dm.org/tomekwi/as.js)
 
 as
 ===
