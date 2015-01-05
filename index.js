@@ -1,5 +1,8 @@
+//
 // Consider importing individual functions:
-//     var mapToArray = require('map-to/array');
+//
+//     var asArray = require('as/array');
+//
 
 module.exports =
   { array: require('./array')
