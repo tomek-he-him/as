@@ -4,6 +4,10 @@ var asArray = require("../array");
 test("map-to/array", function (tape) {
   var deepEqual = Function.prototype.apply.bind(tape.deepEqual, null);
 
+
+  // Basic functionality
+  // -----------------------------------------------------------------------------------------------
+
   [ [ asArray({a: "b", c: "d"})
     , [ {key: "a", value: "b"}
       , {key: "c", value: "d"}
@@ -15,6 +19,10 @@ test("map-to/array", function (tape) {
     , []
     , "should return `[]` for an empty object"
     ]
+
+
+  // `options.depth`
+  // -----------------------------------------------------------------------------------------------
 
   , [ asArray({a: "b", c: "d", e: {f: "g"}})
     , [ {key: "a", value: "b"}
@@ -51,6 +59,41 @@ test("map-to/array", function (tape) {
                           ]}
       ]
     , "should map deeply"
+    ]
+
+
+  // `options.traverseArrays`
+  // -----------------------------------------------------------------------------------------------
+
+  , [ asArray(["f", "g"])
+    , ["f", "g"]
+    , "should keep arrays intact by default"
+    ]
+
+  , [ asArray(["f", "g"], {traverseArrays: true})
+    , [ {key: "0", value: "f"}
+      , {key: "1", value: "g"}
+      ]
+    , "should traverse arrays when told to"
+    ]
+
+  , [ asArray({a: "b", c: "d", e: ["f", "g"]}, {depth: Infinity})
+    , [ {key: "a", value: "b"}
+      , {key: "c", value: "d"}
+      , {key: "e", value: ["f", "g"]}
+      ]
+    , "should keep nested arrays intact by default"
+    ]
+
+  , [ asArray({a: "b", c: "d", e: ["f", "g", ["h"]]}, {traverseArrays: true, depth: Infinity})
+    , [ {key: "a", value: "b"}
+      , {key: "c", value: "d"}
+      , {key: "e", value: [ {key: "0", value: "f"}
+                          , {key: "1", value: "g"}
+                          , {key: "2", value: [{key: "0", value: "h"}]}
+                          ]}
+      ]
+    , "should traverse nested arrays when told to"
     ]
 
   ].map(deepEqual);
