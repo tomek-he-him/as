@@ -20,6 +20,28 @@ test("map-to/array", function (tape) {
     , "should return `[]` for an empty object"
     ]
 
+  , [ asArray(
+      { a: null
+      , b: 0
+      , c: true
+      , d: false
+      , e: undefined
+      , f: "string"
+      , g: ""
+      , h: ["array"]
+      })
+    , [ {key: "a", value: null}
+      , {key: "b", value: 0}
+      , {key: "c", value: true}
+      , {key: "d", value: false}
+      , {key: "e", value: undefined}
+      , {key: "f", value: "string"}
+      , {key: "g", value: ""}
+      , {key: "h", value: ["array"]}
+      ]
+    , "should work for various data types"
+    ]
+
 
   // `options.depth`
   // -----------------------------------------------------------------------------------------------
