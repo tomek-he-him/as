@@ -1,7 +1,7 @@
 var test = require("tape");
 var asArray = require("../array");
 
-test("map-to/array", function (tape) {
+test("as/array", function (tape) {
   var deepEqual = Function.prototype.apply.bind(tape.deepEqual, null);
 
 

@@ -1,7 +1,7 @@
 var test = require("tape");
 var asObject = require("../object");
 
-test("map-to/object", function (tape) {
+test("as/object", function (tape) {
   var deepEqual = Function.prototype.apply.bind(tape.deepEqual, null);
 
 
