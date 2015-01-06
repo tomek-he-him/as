@@ -1,7 +1,7 @@
 //
 // as/array
 // -------------------------------------------------------------------------------------------------
-// Maps an `{a: b}` object to a new array of `{key: a, value: b}` pairs.
+// Maps an `{a: "b"}` object to a new array of `{key: "a", value: "b"}` pairs.
 //
 /**
  * @function asArray
