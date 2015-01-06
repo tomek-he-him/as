@@ -1,7 +1,7 @@
 //
 // as/object
 // -------------------------------------------------------------------------------------------------
-// Maps an array of `{key: a, value: b}` pairs to a new `{a: b}` object.
+// Maps an array of `{key: "a", value: "b"}` pairs to a new `{a: "b"}` object.
 //
 /**
  * @function asObject
@@ -17,7 +17,7 @@
  * @returns {Object}
  *    A new object mapped from the array.
  */
-module.exports = function asObject (array, options, _depthLeft) {
+export default function asObject (array, options, _depthLeft) {
   var pair, value;
 
   if (!options) options = {};
@@ -36,4 +36,4 @@ module.exports = function asObject (array, options, _depthLeft) {
     }
 
   return result;
-  };
+  }

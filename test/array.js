@@ -1,5 +1,5 @@
 var test = require("tape");
-var asArray = require("../array");
+var asArray = require("../dist.es5/array");
 
 test("as/array", function (tape) {
   var deepEqual = Function.prototype.apply.bind(tape.deepEqual, null);
