@@ -17,7 +17,7 @@
  * @returns {Object}
  *    A new object mapped from the array.
  */
-module.exports = function asObject (array, options, _depthLeft) {
+export default function asObject (array, options, _depthLeft) {
   var pair, value;
 
   if (!options) options = {};
@@ -36,4 +36,4 @@ module.exports = function asObject (array, options, _depthLeft) {
     }
 
   return result;
-  };
+  }

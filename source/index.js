@@ -1,10 +1,14 @@
 //
 // Consider importing individual functions:
 //
+//     // Using ES6:
+//     import asArray from "as/array";
+//
+//     // …or using CommonJS:
 //     var asArray = require("as/array");
 //
 
-module.exports =
-  { array: require("./array")
-  , object: require("./object")
-  };
+import array from "./array";
+import object from "./object";
+
+export default {array, object};

@@ -17,7 +17,7 @@
  * @returns {Array}
  *    A new array of key-value pairs mapped from the object.
  */
-module.exports = function asArray (object, options, _depthLeft) {
+export default function asArray (object, options, _depthLeft) {
   var key, value;
 
   if (!options) options = {};
@@ -37,4 +37,4 @@ module.exports = function asArray (object, options, _depthLeft) {
     }
 
   return result;
-  };
+  }
