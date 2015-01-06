@@ -31,7 +31,9 @@
   }
 
 , "scripts":
-  { "test": "node test"
+  { "pretest": "gulp"
+  , "test": "node test"
+
   , "coveralls": "istanbul cover test --report lcovonly && coveralls < ./coverage/lcov.info"
   }
 , "devDependencies":
