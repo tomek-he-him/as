@@ -33,6 +33,7 @@
 , "scripts":
   { "pretest": "gulp"
   , "test": "node test"
+  , "prepublish": "gulp"
 
   , "coveralls": "istanbul cover test --report lcovonly && coveralls < ./coverage/lcov.info"
   }
