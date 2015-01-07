@@ -4,6 +4,7 @@
 # - Built files,
 /dist/
 /dist.es5/
+/test.modules/
 
 # - All files and directories starting with "#",
 \#*

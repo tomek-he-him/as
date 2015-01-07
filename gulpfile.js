@@ -5,6 +5,8 @@
 // Imports
 // -------------------------------------------------------------------------------------------------
 
+var del = require("del");
+
 var gulp = require("gulp");
 var to5 = require("gulp-6to5");
 
@@ -18,7 +20,12 @@ var to5 = require("gulp-6to5");
 // `gulp`
 // -------------------------------------------------------------------------------------------------
 
-gulp.task("default", ["scripts"]);
+gulp.task("default", ["build"]);
+
+
+// `gulp build`
+// -------------------------------------------------------------------------------------------------
+gulp.task("build", ["scripts"]);
 
 
 // `gulp scripts`
@@ -37,4 +44,23 @@ gulp.task("scripts:es5", function () {
         .pipe(to5({modules: "6-to-library"}))
         .pipe(gulp.dest("dist.es5"))
         ;
+});
+
+
+// `gulp prepare-test`
+// -------------------------------------------------------------------------------------------------
+
+gulp.task("prepare-test", function () {
+    return gulp.src("source/**/*.js")
+        .pipe(to5({modules: "common"}))
+        .pipe(gulp.dest("test.modules"))
+        ;
+});
+
+
+// `gulp teardown-test`
+// -------------------------------------------------------------------------------------------------
+
+gulp.task("teardown-test", function (done) {
+  del("test.modules", done);
 });
