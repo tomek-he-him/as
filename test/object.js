@@ -1,5 +1,5 @@
 var test = require("tape");
-var asObject = require("../dist.es5/object");
+var asObject = require("../test.modules/object");
 
 test("as/object", function (tape) {
   var deepEqual = Function.prototype.apply.bind(tape.deepEqual, null);

@@ -31,11 +31,11 @@
   }
 
 , "scripts":
-  { "pretest": "gulp"
+  { "pretest": "gulp prepare-test"
   , "test": "node test"
-  , "prepublish": "gulp"
-
-  , "coveralls": "istanbul cover test --report lcovonly && coveralls < ./coverage/lcov.info"
+  , "posttest": "gulp teardown-test"
+  , "prepublish": "gulp build"
+  , "coveralls": "npm run pretest && istanbul cover test --report lcovonly && coveralls < ./coverage/lcov.info && npm run posttest"
   }
 , "devDependencies":
   { "tape": "3.0.3"
@@ -45,5 +45,6 @@
   , "gulp": "3.8.10"
   , "gulp-6to5": "2.0.0"
   , "6-to-library": "0.3.0-alpha"
+  , "del": "1.1.1"
   }
 }
