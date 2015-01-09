@@ -24,12 +24,12 @@
     , "email": "t.wiszniewski@gmail.com"
     }
   ]
-
 , "repository":
   { "type": "git"
   , "url": "https://github.com/tomekwi/as.js.git"
   }
 
+, "main": "dist.es5/"
 , "scripts":
   { "pretest": "gulp prepare-test"
   , "test": "node test"
@@ -41,7 +41,6 @@
   { "tape": "3.0.3"
   , "coveralls": "2.11.2"
   , "istanbul": "0.3.5"
-
   , "gulp": "3.8.10"
   , "gulp-6to5": "2.0.0"
   , "6-to-library": "0.3.0"
