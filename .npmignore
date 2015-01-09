@@ -1,6 +1,9 @@
 # Files ignored by Git
 # ====================
 
+# - Test helper files,
+/test.modules/
+
 # - All files and directories starting with "#",
 \#*
 

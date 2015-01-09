@@ -2,8 +2,10 @@
 # ====================
 
 # - Built files,
-/dist/
-/dist.es5/
+/index.js
+/array.js
+/object.js
+/dist.es6/
 /test.modules/
 
 # - All files and directories starting with "#",

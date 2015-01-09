@@ -29,7 +29,6 @@
   , "url": "https://github.com/tomekwi/as.js.git"
   }
 
-, "main": "dist.es5/"
 , "scripts":
   { "pretest": "gulp prepare-test"
   , "test": "node test"
