@@ -23,7 +23,7 @@ var settings =
       , test: "./test.modules"
       }
     }
-  }
+  };
 
 
 
