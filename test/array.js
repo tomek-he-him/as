@@ -29,6 +29,7 @@ test("as/array", function (tape) {
       , f: "string"
       , g: ""
       , h: ["array"]
+      , i: {object: "object"}
       })
     , [ {key: "a", value: null}
       , {key: "b", value: 0}
@@ -38,6 +39,7 @@ test("as/array", function (tape) {
       , {key: "f", value: "string"}
       , {key: "g", value: ""}
       , {key: "h", value: ["array"]}
+      , {key: "i", value: {object: "object"}}
       ]
     , "should work for various data types"
     ]
