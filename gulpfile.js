@@ -56,7 +56,7 @@ gulp.task("scripts:es6", function () {
 
 gulp.task("scripts:es5", function () {
   return gulp.src(settings.scripts.source)
-    .pipe(to5({modules: "6-to-library"}))
+    .pipe(to5({modules: "umd"}))
     .pipe(gulp.dest(settings.scripts.target.es5))
     ;
 });
