@@ -16,6 +16,18 @@ test("as/object", function (tape) {
     , "should do the job for a simple array"
     ]
 
+  , [ asObject(
+      [ {key: "_-a", value: "b"}
+      , {key: "1@'ć /=\\\"", value: "d"}
+      , {key: "ಠ_ಠ", value: "it works!"}
+      ])
+    , { "_-a": "b"
+      , "1@'ć /=\\\"": "d"
+      , "ಠ_ಠ": "it works!"
+      }
+    , "should work with special characters and unicode"
+    ]
+
   , [ asObject([])
     , {}
     , "should return `{}` for an empty array"

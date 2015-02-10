@@ -15,6 +15,18 @@ test("as/array", function (tape) {
     , "should do the job for a simple array"
     ]
 
+  , [ asArray(
+      { "_-a": "b"
+      , "1@'ć /=\\\"": "d"
+      , "ಠ_ಠ": "it works!"
+      })
+    , [ {key: "_-a", value: "b"}
+      , {key: "1@'ć /=\\\"", value: "d"}
+      , {key: "ಠ_ಠ", value: "it works!"}
+      ]
+    , "should work with special characters and unicode"
+    ]
+
   , [ asArray({})
     , []
     , "should return `[]` for an empty object"
