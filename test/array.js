@@ -54,23 +54,23 @@ test("as/array", function (tape) {
     , "should map shallowly by default"
     ]
 
-  , [ asArray({a: "b", c: "d", e: {f: "g"}}, {depth: 1})
+  , [ asArray({a: "b", c: "d", e: {f: "g"}}, {depth: 2})
     , [ {key: "a", value: "b"}
       , {key: "c", value: "d"}
       , {key: "e", value: [ {key: "f", value: "g"}
                           ]}
       ]
-    , "should map one level deep"
+    , "should map two levels deep"
     ]
 
-  , [ asArray({a: "b", c: "d", e: {f: "g", h: {i: "j"}}}, {depth: 1})
+  , [ asArray({a: "b", c: "d", e: {f: "g", h: {i: "j"}}}, {depth: 2})
     , [ {key: "a", value: "b"}
       , {key: "c", value: "d"}
       , {key: "e", value: [ {key: "f", value: "g"}
                           , {key: "h", value: {i: "j"}}
                           ]}
       ]
-    , "should map only one level deep"
+    , "should map only two levels deep"
     ]
 
   , [ asArray({a: "b", c: "d", e: {f: "g", h: {i: "j"}}}, {depth: Infinity})
