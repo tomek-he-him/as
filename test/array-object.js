@@ -50,8 +50,8 @@ test("as/array >> as/object", function (tape) {
 
   , [ asObject(asArray
       ( {a: "b", c: "d", e: {f: "g", h: {i: "j"}}}
-      , {depth: 1}
-      ), {depth: 1})
+      , {depth: 2}
+      ), {depth: 2})
     , {a: "b", c: "d", e: {f: "g", h: {i: "j"}}}
     , "shouldn't change a nested object mapped to a specific depth"
     ]

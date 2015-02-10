@@ -75,10 +75,10 @@ test("as/object", function (tape) {
       ( [ {key: "a", value: "b"}
         , {key: "c", value: [{key: "d", value: "e"}]}
         ]
-      , {depth: 1}
+      , {depth: 2}
       )
     , {a: "b", c: {d: "e"}}
-    , "should map one level deep"
+    , "should map two levels deep"
     ]
 
   , [ asObject
@@ -87,10 +87,10 @@ test("as/object", function (tape) {
                             , {key: "f", value: [{key: "g", value: "h"}]}
                             ]}
         ]
-      , {depth: 1}
+      , {depth: 2}
       )
     , {a: "b", c: {d: "e", f: [{key: "g", value: "h"}]}}
-    , "should map only one level deep"
+    , "should map only two levels deep"
     ]
 
   , [ asObject

@@ -10,30 +10,44 @@
  *    The array of key-value pairs to be mapped.
  *
  * @param {Object} [options]
- * - {Number} [depth=0]
+ * - {Number} [depth=1]
  *    The depth to which the `array`'s pairs should be traversed. Set it to `Infinity` to map the
  *    whole structure.
  *
  * @returns {Object}
  *    A new object mapped from the array.
  */
-export default function asObject (array, options, _depthLeft) {
-  var pair, value;
+export default function asObject (array, options) {
+  // Parse options.
+  var depth =
+    ( !options || typeof options == "undefined"
+    ? 1
+    : options.depth
+    );
 
-  if (!options) options = {};
-  if (_depthLeft === void null && options.depth) _depthLeft = options.depth;
+  // End recursion if we've reached a depth of 0.
+  if (!depth) return array;
 
+  // Create an empty `result` object.
   var result = {};
-  var i = 0; var l = array.length; while (i < l) {
-    pair = array[i++];
+  // For every `pair` of the given `array`:
+  var i = 0; var l = array.length;
+  while (i < l) { let pair = array[i++];
+    // - skip the `pair` if it has no `key`
     if (!pair || !pair.hasOwnProperty("key")) continue;
 
-    value = pair.value;
-    if (_depthLeft && value instanceof Array) {
-      value = asObject(value, options, _depthLeft - 1);
+    // - save `pair.value` as `value`
+    let value = pair.value;
+
+    // - recurse if the `value` is an array
+    if (value instanceof Array) {
+      value = asObject(value, {depth: depth - 1});
       }
+
+    // - save `value` as `result[pair.key]`
     result[pair.key] = value;
     }
 
+  // Return the `result`.
   return result;
   }
