@@ -1,10 +1,8 @@
 var test = require("tape");
 var asArray = require("../test.modules/array");
 
-test("as/array", function (tape) {
-  var deepEqual = Function.prototype.apply.bind(tape.deepEqual, null);
 
-
+test("as/array: basics", function (is) {
   // Basic functionality
   // -----------------------------------------------------------------------------------------------
 
@@ -55,12 +53,14 @@ test("as/array", function (tape) {
       ]
     , "should work for various data types"
     ]
+  ].map(function (testCase) {is.deepEqual.apply(null, testCase);});
+
+  is.end();
+  });
 
 
-  // `options.depth`
-  // -----------------------------------------------------------------------------------------------
-
-  , [ asArray({a: "b", c: "d", e: {f: "g"}})
+test("as/array: options.depth", function (is) {
+  [ [ asArray({a: "b", c: "d", e: {f: "g"}})
     , [ {key: "a", value: "b"}
       , {key: "c", value: "d"}
       , {key: "e", value: {f: "g"}}
@@ -97,7 +97,46 @@ test("as/array", function (tape) {
     , "should map deeply"
     ]
 
-  ].map(deepEqual);
+  ].map(function (testCase) {is.deepEqual.apply(null, testCase);});
 
-  tape.end();
+  is.end();
+  });
+
+
+test("as/array: options.keepArrays", function (is) {
+  [ [ asArray(["a", "b"])
+    , ["a", "b"]
+    , "should keep arrays by default"
+    ]
+
+  , [ asArray(["a", "b"], {transformArrays: true})
+    , [ {key: "0", value: "a"}
+      , {key: "1", value: "b"}
+      ]
+    , "should transform arrays when told to"
+    ]
+
+  , [ asArray({array: ["a", "b"]}, {depth: Infinity})
+    , [ { key: "array"
+        , value:
+          ["a", "b"]
+        }
+      ]
+    , "should keep nested arrays by default when mapping deeply"
+    ]
+
+  , [ asArray({array: ["a", "b"]}, {depth: Infinity, transformArrays: true})
+    , [ { key: "array"
+        , value:
+          [ {key: "0", value: "a"}
+          , {key: "1", value: "b"}
+          ]
+        }
+      ]
+    , "should transform nested arrays when told to when mapping deeply"
+    ]
+
+  ].map(function (testCase) {is.deepEqual.apply(null, testCase);});
+
+  is.end();
   });
