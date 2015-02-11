@@ -10,23 +10,30 @@
  *    The object to be mapped.
  *
  * @param {Object} [options]
- * - {Number} [depth=1]
+ * @param {Number} [options.depth=1]
  *    The depth to which the `object`'s tree should be mapped. Set it to `Infinity` to map the
  *    entire tree structure.
+ * @param {Boolean} [options.transformArrays=false]
+ *    If true, arrays will be transformed. `["a", "b"]` will map to
+ *    `[{key: "0", value: "a"}, {key: "1", value: "b"}]`. *
  *
  * @returns {Array}
  *    A new array of key-value pairs mapped from the object.
  */
 export default function asArray (object, options) {
   // Parse options.
-  var depth =
-    ( !options || typeof options == "undefined"
-    ? 1
-    : options.depth
+  if (!options) options = {};
+  var depth = (typeof options.depth != "undefined"
+    ? options.depth
+    : 1
     );
+  var transformArrays = !!options.transformArrays;
 
   // End recursion if we've reached a depth of 0.
   if (!depth) return object;
+
+  // Return if `object` is an Array – unless `options.transformArrays` is set to true.
+  if (object instanceof Array && !transformArrays) return object;
 
   // Create an empty `result` array.
   var result = [];
@@ -35,7 +42,11 @@ export default function asArray (object, options) {
     let value = object[key];
     // - recurse if the value is an object
     if (typeof value == "object" && value !== null) {
-      value = asArray(value, {depth: depth - 1});
+      value = asArray(value
+        , { depth: depth - 1
+          , transformArrays: transformArrays
+          }
+        );
       }
     // - append {key: `key`, value: `object[key]`} to `result`
     result.push({key: key, value: value});
