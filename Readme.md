@@ -22,7 +22,7 @@ Installation
 ------------
 
 ```sh
-> npm install as
+$ npm install as
 ```
 
 
@@ -32,10 +32,31 @@ Usage
 -----
 
 ```js
-var asObject = require("as/object");
 var asArray = require("as/array");
+var asObject = require("as/object");
+```
 
-// Examples will soon flood in here
+
+### as/array
+
+```js
+asArray(
+  {a: 1, b: 2}
+  );
+// [ {key: "a", value: 1}
+// , {key: "b", value: 2}
+// ]
+```
+
+
+### as/object
+
+```js
+asObject(
+  [ {key: "a", value: 1}
+  , {key: "b", value: 2}
+  ]);
+// {a: 1, b: 2}
 ```
 
 
