@@ -10,10 +10,11 @@ as
 
 - Brings all functional goodness of arrays to objects.
 - Brings the flexibility of objects to arrays.
-- Works well with a functional programming library, like [101][].
+- Works great with [1-liners][], [101][] and other functional programming libraries.
 
 
 [101]: https://github.com/tjmehta/101 "tjmehta/101"
+[1-liners]: https://github.com/stoeffel/1-liners "stoeffel/1-liners"
 
 
 
