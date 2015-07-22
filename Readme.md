@@ -4,9 +4,6 @@
  [![Coveralls
 ](https://img.shields.io/coveralls/tomekwi/as.svg?style=flat-square)
 ](https://coveralls.io/r/tomekwi/as)
- [![Code climate
-](https://img.shields.io/codeclimate/github/tomekwi/as.svg?style=flat-square)
-](https://codeclimate.com/github/tomekwi/as)
  [![David DM
 ](https://img.shields.io/david/tomekwi/as.svg?style=flat-square)
 ](http://david-dm.org/tomekwi/as)
